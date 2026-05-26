@@ -77,26 +77,26 @@ export const FEATURES = [
 ] as const;
 
 export const GALLERY_IMAGES = [
-  { src: "/assets/images/gourmet-completa.jpg", alt: "Área gourmet completa com churrasqueira, bancada e iluminação em LED", label: "Área Gourmet" },
-  { src: "/assets/images/piscina-dia.jpg", alt: "Piscina com hidromassagem e espreguiçadeiras durante o dia", label: "Piscina" },
-  { src: "/assets/images/fachada-noturna-sem-nada.jpg", alt: "Fachada da casa iluminada à noite", label: "Fachada Noturna" },
-  { src: "/assets/images/cozinha-h1.jpg", alt: "Cozinha planejada com acabamento premium", label: "Cozinha" },
-  { src: "/assets/images/sala-social-com-cortina-automatizada.jpg", alt: "Sala social com cortina automatizada e iluminação", label: "Sala Social" },
-  { src: "/assets/images/fachada-embarcacoes-h1.jpg", alt: "Fachada lateral com espaço para embarcações", label: "Garagem & Embarcações" },
-  { src: "/assets/images/fachada-h4.jpg", alt: "Vista frontal da entrada principal iluminada", label: "Entrada Principal" },
-  { src: "/assets/images/piscina-noite.jpg", alt: "Piscina iluminada durante a noite", label: "Piscina Noturna" },
+  { src: "/assets/images/gourmet-completa.webp", alt: "Área gourmet completa com churrasqueira, bancada e iluminação em LED", label: "Área Gourmet" },
+  { src: "/assets/images/piscina-dia.webp", alt: "Piscina com hidromassagem e espreguiçadeiras durante o dia", label: "Piscina" },
+  { src: "/assets/images/fachada-noturna-sem-nada.webp", alt: "Fachada da casa iluminada à noite", label: "Fachada Noturna" },
+  { src: "/assets/images/cozinha-h1.webp", alt: "Cozinha planejada com acabamento premium", label: "Cozinha" },
+  { src: "/assets/images/sala-social-com-cortina-automatizada.webp", alt: "Sala social com cortina automatizada e iluminação", label: "Sala Social" },
+  { src: "/assets/images/fachada-embarcacoes-h1.webp", alt: "Fachada lateral com espaço para embarcações", label: "Garagem & Embarcações" },
+  { src: "/assets/images/fachada-h4.webp", alt: "Vista frontal da entrada principal iluminada", label: "Entrada Principal" },
+  { src: "/assets/images/piscina-noite.webp", alt: "Piscina iluminada durante a noite", label: "Piscina Noturna" },
 ] as const;
 
 export const LIFESTYLE_BLOCKS = [
   {
-    image: "/assets/images/rio-por-do-sol-nuvens.jpg",
+    image: "/assets/images/rio-por-do-sol-nuvens.webp",
     title: "Lazer e tranquilidade",
     description:
       "Aproveite os dias de sol na piscina com hidromassagem e os fins de tarde na varanda, sentindo a brisa do Rio Paranapanema.",
     align: "right" as const,
   },
   {
-    image: "/assets/images/gourmet-com-sofa.jpg",
+    image: "/assets/images/gourmet-com-sofa.webp",
     title: "Espaços que reúnem",
     description:
       "A área gourmet integrada de 80m² oferece o ambiente perfeito para receber família e amigos com máximo conforto e climatização.",

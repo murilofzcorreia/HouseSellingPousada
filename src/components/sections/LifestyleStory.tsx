@@ -13,7 +13,7 @@ export default function LifestyleStory() {
         </h2>
       </div>
 
-      {LIFESTYLE_BLOCKS.map((block, i) => {
+      {LIFESTYLE_BLOCKS.map((block) => {
         const reversed = block.align === "left";
         return (
           <div key={block.title} className="container-editorial py-16 md:py-32 relative">
@@ -28,6 +28,7 @@ export default function LifestyleStory() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={60}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(15,14,13,0.35)_100%)] pointer-events-none" />
               </div>
@@ -52,12 +53,13 @@ export default function LifestyleStory() {
       {/* Full-width cinematic divider — static image, no parallax */}
       <div className="relative h-[34vh] min-h-[220px] md:h-[60vh] md:min-h-[400px] overflow-hidden mt-12 md:mt-24">
         <Image
-          src="/assets/images/rio-por-do-sol-ponte.jpg"
+          src="/assets/images/rio-por-do-sol-ponte.webp"
           alt="Pôr do sol no Rio Paranapanema com vista da ponte"
           fill
           className="object-cover object-center"
           sizes="100vw"
           quality={60}
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/40 pointer-events-none" />
       </div>

@@ -23,7 +23,7 @@ export default function ContactCTA() {
   };
 
   const inputClass = "w-full bg-transparent border-b border-stone-700 pb-3 pt-1 text-cream text-sm placeholder:text-stone-600 focus:outline-none focus:border-accent transition-colors duration-500";
-  const btnClass = "inline-flex items-center justify-center gap-2 tracking-[0.08em] uppercase transition-all duration-300 cursor-pointer select-none bg-accent text-ink-950 hover:bg-accent-light px-7 py-3 text-xs";
+  const btnClass = "inline-flex items-center justify-center gap-2 tracking-[0.08em] uppercase transition-colors duration-300 cursor-pointer select-none bg-accent text-ink-950 hover:bg-accent-light px-7 py-3 text-xs";
 
   return (
     <section id="contact" className="section-spacing bg-ink-950">

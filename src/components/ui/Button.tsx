@@ -23,7 +23,7 @@ const sizeStyles: Record<ButtonSize, string> = {
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant = "primary", size = "md", href, children, className = "", ...props }, ref) => {
-    const cls = `inline-flex items-center justify-center gap-2 tracking-[0.08em] uppercase transition-all duration-300 cursor-pointer select-none active:scale-[0.97] ${variantStyles[variant]} ${sizeStyles[size]} ${className}`.trim();
+    const cls = `inline-flex items-center justify-center gap-2 tracking-[0.08em] uppercase transition-colors duration-300 cursor-pointer select-none active:scale-[0.97] ${variantStyles[variant]} ${sizeStyles[size]} ${className}`.trim();
 
     if (href) {
       return (

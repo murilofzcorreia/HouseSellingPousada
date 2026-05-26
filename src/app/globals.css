@@ -8,7 +8,7 @@
    - Zero JS animation libraries during scroll
    - Single IntersectionObserver for all reveals
    - CSS-only transitions and animations
-   - No backdrop-blur, no box-shadow animations
+   - No expensive blur or shadow animation paths
    - Native browser scrolling (no virtual scroll)
    ============================================ */
 
@@ -156,8 +156,12 @@ body {
 /* ── Focus styles ── */
 input:focus, textarea:focus {
   border-color: var(--color-accent) !important;
-  box-shadow: 0 1px 0 0 var(--color-accent);
-  transition: border-color 500ms var(--ease-reveal), box-shadow 500ms var(--ease-reveal);
+  transition: border-color 300ms var(--ease-reveal);
+}
+
+main > section:not(#hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
 }
 
 /* ============================================
@@ -210,17 +214,6 @@ input:focus, textarea:focus {
 }
 [data-reveal="line"].is-visible {
   transform: scaleX(1);
-}
-
-/* Clip center (for map) */
-[data-reveal="clip-center"] {
-  opacity: 1;
-  transform: none;
-  clip-path: inset(50% 50% 50% 50%);
-  transition: clip-path 1.4s var(--ease-cinema);
-}
-[data-reveal="clip-center"].is-visible {
-  clip-path: inset(0% 0% 0% 0%);
 }
 
 /* Word reveal from below */
@@ -282,6 +275,43 @@ input:focus, textarea:focus {
   100% { opacity: 1; }
 }
 .animate-fade-in-late { animation: fade-in-late 2.5s ease-out forwards; }
+
+@keyframes lightbox-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-lightbox-fade {
+  animation: lightbox-fade 180ms ease-out both;
+}
+
+@keyframes lightbox-scale {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-lightbox-scale {
+  animation: lightbox-scale 220ms var(--ease-reveal) both;
+}
+
+@media (max-width: 767px) {
+  [data-reveal],
+  [data-reveal="scale"],
+  [data-reveal="line"],
+  [data-reveal="word"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  [data-reveal-stagger] > [data-reveal] {
+    transition-delay: 0ms;
+  }
+
+  .animate-scroll-pulse {
+    animation: none;
+    opacity: 0.6;
+    transform: scaleY(1);
+  }
+}
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {

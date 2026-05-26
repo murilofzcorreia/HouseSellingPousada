@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="flex flex-col gap-5">
             <a href="#hero">
               <Image
-                src="/assets/images/logo.png"
+                src="/assets/images/logo.webp"
                 alt="Pousada do Paranapanema"
                 width={120} height={40}
                 className="h-10 w-auto object-contain"

@@ -24,7 +24,7 @@ export default function PremiumFeatures() {
             >
               {/* Accent line */}
               <div className="absolute inset-x-0 top-0 h-px flex justify-center pointer-events-none">
-                <div className="h-full bg-gradient-to-r from-transparent via-accent/40 to-transparent transition-all duration-700 ease-out w-0 group-hover:w-full" />
+                <div className="h-full w-full bg-gradient-to-r from-transparent via-accent/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out" />
               </div>
 
               <h3 className="text-cream text-sm font-medium">{feature.title}</h3>
