@@ -50,6 +50,11 @@ export default function Footer() {
         </div>
 
         <div className="h-px bg-stone-800/40 mb-8" />
+        <div className="mb-8 border border-accent/30 bg-accent-muted px-5 py-4">
+          <p className="text-cream text-xs md:text-sm leading-relaxed">
+            Aviso: as mobílias apresentadas nas imagens são geradas por IA e têm caráter ilustrativo.
+          </p>
+        </div>
         <p className="text-stone-600 text-xs">
           © {currentYear} {SITE_CONFIG.name}. {location.city}, {location.state}.
         </p>

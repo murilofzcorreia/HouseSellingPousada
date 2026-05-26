@@ -85,6 +85,7 @@ export const GALLERY_IMAGES = [
   { src: "/assets/images/fachada-embarcacoes-h1.webp", alt: "Fachada lateral com espaço para embarcações", label: "Garagem & Embarcações" },
   { src: "/assets/images/fachada-h4.webp", alt: "Vista frontal da entrada principal iluminada", label: "Entrada Principal" },
   { src: "/assets/images/piscina-noite.webp", alt: "Piscina iluminada durante a noite", label: "Piscina Noturna" },
+  { src: "/assets/images/suite-master-final.png", alt: "Suíte master com banheiro, varanda e vista para a área externa", label: "Suíte Master" },
 ] as const;
 
 export const LIFESTYLE_BLOCKS = [
