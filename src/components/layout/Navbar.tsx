@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-ink-950/65 to-transparent border-b border-transparent"
+        className="fixed top-0 left-0 right-0 z-50 bg-transparent border-0"
       >
         <div className="container-editorial flex items-center justify-between h-16 md:h-18">
           <a href="#hero" className="flex items-center">
