@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { outfit, inter, playfair } from "@/lib/fonts";
-import SmoothScroll from "@/components/layout/SmoothScroll";
+import RevealObserver from "@/components/layout/SmoothScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col ambient-bg">
-        <SmoothScroll>{children}</SmoothScroll>
+        <RevealObserver>{children}</RevealObserver>
       </body>
     </html>
   );

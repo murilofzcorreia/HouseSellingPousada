@@ -1,8 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { fadeInUp, viewport } from "@/lib/framer-variants";
-
 interface SectionHeadingProps {
   label?: string;
   title: string;
@@ -19,10 +14,7 @@ export default function SectionHeading({
   const alignClass = align === "center" ? "text-center items-center" : "text-left items-start";
 
   return (
-    <motion.div
-      className={`flex flex-col gap-4 mb-14 md:mb-16 ${alignClass}`}
-      initial="hidden" whileInView="visible" viewport={viewport} variants={fadeInUp}
-    >
+    <div data-reveal className={`flex flex-col gap-4 mb-14 md:mb-16 ${alignClass}`}>
       {label && (
         <span className="text-accent text-xs uppercase tracking-[0.2em]">{label}</span>
       )}
@@ -30,6 +22,6 @@ export default function SectionHeading({
       {subtitle && (
         <p className="max-w-xl text-stone-400 text-sm leading-relaxed">{subtitle}</p>
       )}
-    </motion.div>
+    </div>
   );
 }

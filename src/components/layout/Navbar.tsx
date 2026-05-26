@@ -2,20 +2,26 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
-import Button from "@/components/ui/Button";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Check on mount
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -26,15 +32,12 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
           scrolled
-            ? "bg-[#0f0e0d]/90 backdrop-blur-xl border-b border-[#302d29]/40 shadow-sm"
+            ? "bg-[#0f0e0d]/95 border-b border-[#302d29]/40"
             : "bg-transparent border-b border-transparent"
         }`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
       >
         <div className="container-editorial flex items-center justify-between h-16 md:h-18">
           <a href="#hero" className="flex items-center">
@@ -59,26 +62,24 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden lg:block">
-            <Button href="#contact" size="sm">Contato</Button>
+            <a href="#contact" className="inline-flex items-center justify-center gap-2 tracking-[0.08em] uppercase transition-all duration-300 cursor-pointer select-none bg-accent text-ink-950 hover:bg-accent-light px-5 py-2.5 text-[11px]">
+              Contato
+            </a>
           </div>
 
-          {/* Mobile toggle */}
           <button
             className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-[6px] cursor-pointer"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu" id="mobile-menu-toggle"
           >
-            <motion.span className="block w-5 h-px bg-cream origin-center"
-              animate={mobileOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }} transition={{ duration: 0.25 }} />
-            <motion.span className="block w-5 h-px bg-cream"
-              animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }} transition={{ duration: 0.15 }} />
-            <motion.span className="block w-5 h-px bg-cream origin-center"
-              animate={mobileOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }} transition={{ duration: 0.25 }} />
+            <span className={`block w-5 h-px bg-cream origin-center transition-transform duration-250 ${mobileOpen ? "rotate-45 translate-y-[4px]" : ""}`} />
+            <span className={`block w-5 h-px bg-cream transition-opacity duration-150 ${mobileOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-5 h-px bg-cream origin-center transition-transform duration-250 ${mobileOpen ? "-rotate-45 -translate-y-[4px]" : ""}`} />
           </button>
         </div>
-      </motion.nav>
+      </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — AnimatePresence is the only FM usage (toggle, not scroll) */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -87,20 +88,20 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
           >
             <nav className="flex flex-col items-center gap-6">
-              {NAV_LINKS.map((link, i) => (
-                <motion.a key={link.href} href={link.href}
+              {NAV_LINKS.map((link) => (
+                <a key={link.href} href={link.href}
                   className="text-cream text-lg font-light tracking-widest uppercase"
-                  initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }} transition={{ delay: i * 0.04, duration: 0.3 }}
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
-                </motion.a>
+                </a>
               ))}
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mt-4 flex flex-col items-center gap-3">
-                <Button href="#contact" onClick={() => setMobileOpen(false)}>Agendar visita</Button>
+              <div className="mt-4 flex flex-col items-center gap-3">
+                <a href="#contact" onClick={() => setMobileOpen(false)} className="inline-flex items-center justify-center gap-2 tracking-[0.08em] uppercase transition-all duration-300 cursor-pointer select-none bg-accent text-ink-950 hover:bg-accent-light px-7 py-3 text-xs">
+                  Agendar visita
+                </a>
                 <span className="text-stone-500 text-xs">{SITE_CONFIG.contact.phone}</span>
-              </motion.div>
+              </div>
             </nav>
           </motion.div>
         )}

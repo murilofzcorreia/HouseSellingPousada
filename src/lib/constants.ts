@@ -77,14 +77,14 @@ export const FEATURES = [
 ] as const;
 
 export const GALLERY_IMAGES = [
-  { src: "/assets/images/gourmet-completa.png", alt: "Área gourmet completa com churrasqueira, bancada e iluminação em LED", label: "Área Gourmet" },
-  { src: "/assets/images/piscina-dia.png", alt: "Piscina com hidromassagem e espreguiçadeiras durante o dia", label: "Piscina" },
-  { src: "/assets/images/fachada-noturna-sem-nada.png", alt: "Fachada da casa iluminada à noite", label: "Fachada Noturna" },
-  { src: "/assets/images/cozinha-h1.png", alt: "Cozinha planejada com acabamento premium", label: "Cozinha" },
-  { src: "/assets/images/sala-social-com-cortina-automatizada.png", alt: "Sala social com cortina automatizada e iluminação", label: "Sala Social" },
-  { src: "/assets/images/fachada-embarcacoes-h1.png", alt: "Fachada lateral com espaço para embarcações", label: "Garagem & Embarcações" },
-  { src: "/assets/images/fachada-h4.png", alt: "Vista frontal da entrada principal iluminada", label: "Entrada Principal" },
-  { src: "/assets/images/piscina-noite.png", alt: "Piscina iluminada durante a noite", label: "Piscina Noturna" },
+  { src: "/assets/images/gourmet-completa.jpg", alt: "Área gourmet completa com churrasqueira, bancada e iluminação em LED", label: "Área Gourmet" },
+  { src: "/assets/images/piscina-dia.jpg", alt: "Piscina com hidromassagem e espreguiçadeiras durante o dia", label: "Piscina" },
+  { src: "/assets/images/fachada-noturna-sem-nada.jpg", alt: "Fachada da casa iluminada à noite", label: "Fachada Noturna" },
+  { src: "/assets/images/cozinha-h1.jpg", alt: "Cozinha planejada com acabamento premium", label: "Cozinha" },
+  { src: "/assets/images/sala-social-com-cortina-automatizada.jpg", alt: "Sala social com cortina automatizada e iluminação", label: "Sala Social" },
+  { src: "/assets/images/fachada-embarcacoes-h1.jpg", alt: "Fachada lateral com espaço para embarcações", label: "Garagem & Embarcações" },
+  { src: "/assets/images/fachada-h4.jpg", alt: "Vista frontal da entrada principal iluminada", label: "Entrada Principal" },
+  { src: "/assets/images/piscina-noite.jpg", alt: "Piscina iluminada durante a noite", label: "Piscina Noturna" },
 ] as const;
 
 export const LIFESTYLE_BLOCKS = [
@@ -96,7 +96,7 @@ export const LIFESTYLE_BLOCKS = [
     align: "right" as const,
   },
   {
-    image: "/assets/images/gourmet-com-sofa.png",
+    image: "/assets/images/gourmet-com-sofa.jpg",
     title: "Espaços que reúnem",
     description:
       "A área gourmet integrada de 80m² oferece o ambiente perfeito para receber família e amigos com máximo conforto e climatização.",
